@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #030712;
+    color: #e2e8f0;
+    overflow-x: hidden;
+  }
+  
+  code, pre, .font-mono {
+    font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+}
+
+/* Custom scrollbars for forensic data tables and logs */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #080d1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8;
+}
+
+/* Forensic Creative Background Matrix Styles */
+.bg-forensic-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(56, 189, 248, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
+}
+
+.bg-forensic-dots {
+  background-size: 24px 24px;
+  background-image: radial-gradient(rgba(56, 189, 248, 0.15) 1px, transparent 0);
+}
+
+.bg-forensic-hex {
+  background-color: #030712;
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(14, 165, 233, 0.08) 0%, transparent 60%),
+    linear-gradient(30deg, rgba(6, 182, 212, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(6, 182, 212, 0.03) 87.5%, rgba(6, 182, 212, 0.03)),
+    linear-gradient(150deg, rgba(6, 182, 212, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(6, 182, 212, 0.03) 87.5%, rgba(6, 182, 212, 0.03)),
+    linear-gradient(30deg, rgba(6, 182, 212, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(6, 182, 212, 0.03) 87.5%, rgba(6, 182, 212, 0.03)),
+    linear-gradient(150deg, rgba(6, 182, 212, 0.03) 12%, transparent 12.5%, transparent 87%, rgba(6, 182, 212, 0.03) 87.5%, rgba(6, 182, 212, 0.03));
+  background-size: 100% 100%, 80px 140px, 80px 140px, 80px 140px, 80px 140px;
+}
+
+/* Animations for Forensic Scanline */
+@keyframes forensicLaserScan {
+  0% {
+    top: -5%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    top: 105%;
+    opacity: 0;
+  }
+}
+
+.animate-laser-scan {
+  animation: forensicLaserScan 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes pulseAurora {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(30px, -20px) scale(1.18);
+    opacity: 0.7;
+  }
+}
+
+.animate-aurora-1 {
+  animation: pulseAurora 12s ease-in-out infinite alternate;
+}
+
+.animate-aurora-2 {
+  animation: pulseAurora 16s ease-in-out infinite alternate-reverse;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(51, 65, 85, 0.6);
+}
+
+.glass-panel-glow {
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  box-shadow: 0 10px 30px -10px rgba(6, 182, 212, 0.15);
+}
+
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}

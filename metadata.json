@@ -1,0 +1,8 @@
+{
+  "name": "Digital Evidence Guardian",
+  "description": "Secure digital crime-scene evidence management system with tamper-evident chain of custody, role-based modification approvals, and cryptographic audit ledger.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
